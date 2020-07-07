@@ -11,6 +11,8 @@ import { Button } from 'components/inputs';
 import Modal from 'components/Modal';
 import { isMobileDevice } from 'helpers/deviceInfo';
 
+const googleMapKey = process.env.REACT_APP_GOOGLE_MAP_KEY;
+
 const TRUCK_DATA_FETCH_INTERVAL = 20 * 1000;
 
 const DefaultGoogleMap = ({ defaultCenter, children, ...restProps }) => (
@@ -417,7 +419,7 @@ const Map = ({ lat = 40.4173, lng = -82.9071, ...restProps }) => {
         ref={mapRef}
         mapElement={<div id={'GoogleMap'} className="h-full" />}
         yesIWantToUseGoogleMapApiInternals
-        googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBURRWhfFVZ_9Mrol19Szh_iXREEIcp1vg&v=3.41"
+        googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.41&key=${googleMapKey}`}
         loadingElement={
           <div className="h-full">
             <PulseContainerSpinner />
