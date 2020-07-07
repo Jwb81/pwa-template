@@ -1,0 +1,63 @@
+{
+  "name": "pwa-template",
+  "version": "0.1.0",
+  "private": false,
+  "dependencies": {
+    "@react-google-maps/api": "^2.0.0-alpha",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "classnames": "^2.2.6",
+    "date-fns": "^2.14.0",
+    "query-string": "^6.12.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-google-maps": "^9.4.5",
+    "react-icons": "^3.10.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.0"
+  },
+  "scripts": {
+    "start": "cross-env REACT_APP_ENVIRONMENT=development react-scripts start",
+    "local": "yarn run watch:css && cross-env REACT_APP_ENVIRONMENT=development react-scripts start",
+    "local-staging": "yarn run watch:css && cross-env REACT_APP_ENVIRONMENT=production react-scripts start",
+    "build:css": "postcss src/assets/css/tailwind.css -o src/assets/css/main.css",
+    "watch:css": "postcss src/assets/css/tailwind.css -o src/assets/css/main.css",
+    "build": "yarn run build:css && react-scripts build",
+    "build-dev": "yarn run build:css && cross-env REACT_APP_ENVIRONMENT=development react-scripts build",
+    "build-staging": "yarn run build:css && cross-env REACT_APP_ENVIRONMENT=staging react-scripts --max_old_space_size=8192 build",
+    "build-prod": "yarn run build:css && cross-env REACT_APP_ENVIRONMENT=production react-scripts build",
+    "zip": "cd build/ && bestzip ../build.zip * && cd ..",
+    "lint": "ng lint",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
+    "storybook": "start-storybook",
+    "cosmos": "node ./node_modules/react-cosmos/bin/cosmos",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@tailwindcss/custom-forms": "^0.2.1",
+    "autoprefixer": "^9.7.6",
+    "bestzip": "^2.1.5",
+    "cross-env": "^7.0.2",
+    "gh-pages": "^2.2.0",
+    "postcss-cli": "^7.1.1",
+    "tailwindcss": "^1.4.6"
+  }
+}
