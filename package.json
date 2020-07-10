@@ -18,7 +18,7 @@
     "react-scripts": "3.4.0"
   },
   "scripts": {
-    "start": "cross-env REACT_APP_ENVIRONMENT=development react-scripts start",
+    "start": "yarn run watch:css && cross-env REACT_APP_ENVIRONMENT=development react-scripts start",
     "local": "yarn run watch:css && cross-env REACT_APP_ENVIRONMENT=development react-scripts start",
     "local-staging": "yarn run watch:css && cross-env REACT_APP_ENVIRONMENT=production react-scripts start",
     "build:css": "postcss src/assets/css/tailwind.css -o src/assets/css/main.css",
