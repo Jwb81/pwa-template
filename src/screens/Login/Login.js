@@ -63,13 +63,13 @@ const LoginScreen = ({ history, location, match }) => {
 
     try {
       setIsAuthenticating(true);
+
       // const result = await login(formValues.username, formValues.password);
+      await sleep(1000);
 
       const result = {
         username: 'babyjay',
       };
-      
-      await sleep(1000);
 
       const shouldRememberMe = formValues.rememberMe;
 

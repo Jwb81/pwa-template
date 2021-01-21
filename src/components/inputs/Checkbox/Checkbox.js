@@ -37,12 +37,12 @@ export const Checkbox = ({ classes, type, field, label, error, placeholder, requ
             <input
               type="checkbox"
               className="form-checkbox"
-              name={`${field}`}
-              checked={value}
-              value={value}
-              onChange={onChange}
-              required={required}
-              multiple
+              // name={`${field}`}
+              // checked={value}
+              // value={value}
+              // onChange={onChange}
+              // required={required}
+              // multiple
             />
             <span className="ml-2">{label}</span>
           </label>

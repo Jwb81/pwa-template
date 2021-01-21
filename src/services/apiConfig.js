@@ -1,18 +1,30 @@
 import { API_TOKEN_KEY } from '../constants/storage';
 
-export const apiUrl = (function(env) {
-  switch (env) {
-    case 'production':
-      return 'http://localhost:3001';
-    default:
-      return 'http://localhost:3001';
-  }
-})(process.env.NODE_ENV);
+const { REACT_APP_ENVIRONMENT, REACT_APP_BACKEND } = process.env;
 
-export const getToken = () => localStorage.getItem(API_TOKEN_KEY);
+export const apiUrl = (() => {
+  const localBackendUrl = 'http://localhost:3000';
+
+  if (REACT_APP_BACKEND === 'local') {
+    return localBackendUrl;
+  }
+
+  switch (REACT_APP_ENVIRONMENT) {
+    case 'development':
+      return 'http://dev.hosted.backend';
+    case 'staging':
+      return 'http://staging.hosted.backend';
+    case 'production':
+      return 'http://prod.hosted.backend';
+    default:
+      return localBackendUrl;
+  }
+})();
+
+export const getApiToken = () => localStorage.getItem(API_TOKEN_KEY);
 
 export const getHeaders = (optionalHeaders = {}) => {
-  const token = getToken();
+  const token = getApiToken();
   let defaultHeaders = {
     Accept: 'application/json',
     'Content-Type': 'application/json',

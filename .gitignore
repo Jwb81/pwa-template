@@ -24,4 +24,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # ignore the generated css file as it will be regenerated on start
-/src/assets/css/main.css
+/src/assets/css/tailwind_compiled.css

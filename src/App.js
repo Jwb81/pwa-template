@@ -15,6 +15,7 @@ import LoginScreen from 'screens/Login';
 import DashboardScreen from 'screens/Dashboard';
 import SpinnersScreen from 'screens/SpinnerExamples';
 import MapScreen from 'screens/Map';
+
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const [checkingAuth, setCheckingAuth] = useState(true);
 

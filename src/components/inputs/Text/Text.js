@@ -26,7 +26,7 @@ export const Text = ({
     )}
     <input
       className={cx(
-        'appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white',
+        'appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-gray-100',
         error && 'border-red-500',
       )}
       id={field}

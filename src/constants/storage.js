@@ -1,4 +1,6 @@
-const keyBase = 'PWA_TEMPLATE_';
+import { name } from '../../package.json';
+
+const keyBase = name.toUpperCase().replace(/-/g, '_')
 
 export const API_TOKEN_KEY = `${keyBase}API_TOKEN`;
 export const USERNAME_KEY = `${keyBase}USERNAME`;

@@ -1,4 +1,4 @@
-import { apiUrl, getHeaders, getToken } from './apiConfig';
+import { apiUrl } from './apiConfig';
 import { USER_ID_KEY, API_TOKEN_KEY } from '../constants/storage';
 
 const baseRoute = `${apiUrl}/Account`;

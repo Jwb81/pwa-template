@@ -1,4 +1,4 @@
-import { apiUrl, getHeaders, getToken } from './apiConfig';
+import { apiUrl, getHeaders, getApiToken } from './apiConfig';
 
 const baseRoute = `${apiUrl}`;
 
@@ -10,7 +10,7 @@ const baseRoute = `${apiUrl}`;
 export const getAppMapData = async (userId, entity, onlyActiveReturn = false) => {
   const endpointExtension = entity === 'trucks' ? 'AppMapTruckData' : 'AppMapGarageData';
   const url = `${baseRoute}/AVL/${endpointExtension}?onlyActiveReturn=${onlyActiveReturn}`;
-  const token = getToken();
+  const token = getApiToken();
 
   let formData = new FormData();
   formData.append('userId', userId);
@@ -41,7 +41,7 @@ export const getAppMapData = async (userId, entity, onlyActiveReturn = false) =>
 export const postNewFieldIssue = async form => {
   // const url = `${baseRoute}/new-images`;
   const url = `${baseRoute}/avl/appdataupload`;
-  const token = getToken();
+  const token = getApiToken();
 
   let formData = new FormData();
   var photoData = [];
